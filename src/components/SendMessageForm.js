@@ -9,9 +9,14 @@ class SendMessageForm extends Component {
     this.setState({ message: event.target.value })
   }
 
+  onFormSubmit = (e) => {
+    e.preventDefault();
+    this.props.formSubmitted(this.state.message);
+  }
+
   render() {
     return (
-      <form className="search-message-form">
+      <form className="search-message-form" onSubmit={this.onFormSubmit}>
         <input 
           type="text" 
           value={this.state.message} 

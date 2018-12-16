@@ -1,10 +1,11 @@
 import React from 'react';
+import Message from './Message';
 
-export default () => (
-  <div className="messages-list">
-    <div className="message">
-      <p>RandomFriend</p>
-      <h3>Hi Fori!</h3>
+export default (props) => {
+
+  return (
+    <div className="messages-list">
+      {props.users.map(user => <Message key={user.id} user={user} />)}
     </div>
-  </div>
-);
+  )
+};

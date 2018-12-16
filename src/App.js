@@ -14,12 +14,16 @@ class App extends Component {
       .then(response => this.setState({ users: response.data }));
   }
 
+  formSubmitted = (message) => {
+    console.log(message);
+  }
+
   render() {
     return (
       <div className="App">
         <Title />
-        <MessagesList />
-        <SendMessageForm />
+        <MessagesList users={this.state.users} />
+        <SendMessageForm formSubmitted={this.formSubmitted} />
       </div>
     );
   }
