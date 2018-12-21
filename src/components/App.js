@@ -1,11 +1,9 @@
 import React from 'react';
-import Title from './Title';
 import UsersList from './UsersList';
 
 const App = () => {
   return (
-    <div>
-      <Title />
+    <div className="app ui very padded text container segment">
       <UsersList />
     </div>
   );

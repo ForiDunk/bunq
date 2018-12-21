@@ -9,7 +9,7 @@ class UsersList extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="users-list">
         UsersList
       </div>
     );
