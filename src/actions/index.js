@@ -1,5 +1,10 @@
 import bunq from '../api/bunq';
 
+export const getUser = (userId) => async dispatch => {
+  const user = await bunq.get(`/user/${userId}`);
+  dispatch({ type: 'GET_USER', payload: user.data });
+};
+
 export const getUsers = () => async dispatch => {
   const users = await bunq.get('/users');
   dispatch({ type: 'GET_USERS', payload: users.data });

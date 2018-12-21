@@ -5,16 +5,15 @@ import Comment from './Comment';
 
 class Comments extends React.Component {
   componentDidMount() {
-    this.props.getComments(1, 1);
+    this.props.getComments(6, 1);
   }
 
   render() {
     const { comments } = this.props;
-    console.log(comments);
 
     const commentList = comments.map(comment => (
       <div key={comment.id} className="comment">
-        <Comment />
+        <Comment comment={comment} />
       </div>
     ));
 
