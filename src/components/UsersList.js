@@ -4,7 +4,7 @@ import { getUsers } from '../actions';
 
 class UsersList extends React.Component {
   componentDidMount() {
-    console.log('asdasdasdasds');
+    this.props.getUsers();
   }
 
   render() {
