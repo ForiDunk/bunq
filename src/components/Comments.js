@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getComments } from '../actions';
+import Comment from './Comment';
 
 class Comments extends React.Component {
   componentDidMount() {
@@ -11,23 +12,19 @@ class Comments extends React.Component {
     const { comments } = this.props;
     console.log(comments);
 
+    const commentList = comments.map(comment => (
+      <div key={comment.id} className="comment">
+        <Comment />
+      </div>
+    ));
+
     if(this.props.comments.length === 0) {
       return <div>Loading...</div>;
     }
 
     return (
       <div className="ui comments">
-        <div className="comment">
-          <div className="content">
-            <div className="author">{comments[0].senderId}</div>
-            <div className="metadata">
-              <span className="date">{comments[0].timestamp}</span>
-            </div>
-            <div className="text">
-            {comments[0].message}
-            </div>
-          </div>
-        </div>
+        {commentList}
       </div>
     );
   }
