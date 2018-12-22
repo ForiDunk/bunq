@@ -5,6 +5,13 @@ export const getUser = (userId) => async dispatch => {
   dispatch({ type: 'GET_USER', payload: user.data });
 };
 
+export const selectUser = (user) => {
+  return {
+    type: 'SELECT_USER',
+    payload: user
+  };
+};
+
 export const getUsers = () => async dispatch => {
   const users = await bunq.get('/users');
   dispatch({ type: 'GET_USERS', payload: users.data });

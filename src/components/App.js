@@ -1,10 +1,10 @@
 import React from 'react';
-import Comments from './Comments';
+import UsersList from './UsersList';
 
 const App = () => {
   return (
-    <div className="app ui very padded text container segment">
-      <Comments />
+    <div>
+      <UsersList />
     </div>
   );
 };
