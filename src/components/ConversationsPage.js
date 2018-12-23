@@ -9,15 +9,13 @@ class ConversationsPage extends React.Component {
   }
 
   onConversationSelect = (conversation) => {
-    selectConversation(conversation.conversationId);
+    selectConversation(conversation);
   }
 
   render() {
-    console.log('props:', this.props);
-
     const allConversations = this.props.conversations.map((conversation, index) => {
       const path = `/conversations/${conversation.conversation.conversationId}`;
-      console.log(conversation);
+
       return (
         <Link 
           to={path}

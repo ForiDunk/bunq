@@ -1,12 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getComments, selectConversation } from '../actions';
+import { getComments } from '../actions';
 import Comment from './Comment';
 
 class Comments extends React.Component {
   componentDidMount() {
-    this.props.getComments(6, 1);
-    this.props.selectConversation(6);
+    this.props.getComments(4, 1);
   }
 
   render() {
@@ -34,4 +33,4 @@ const mapStateToProps = (state) => {
   return { comments: state.comments };
 }
 
-export default connect(mapStateToProps, { getComments, getConversationDetails })(Comments);
+export default connect(mapStateToProps, { getComments })(Comments);

@@ -7,8 +7,8 @@ import conversationsReducer from './conversationsReducer';
 
 export default combineReducers({ 
   users: usersReducer,
-  comments: commentsReducer,
   selectedUser: userReducer,
-  conversation: conversationReducer,
-  conversations: conversationsReducer
+  conversations: conversationsReducer,
+  selectedConversation: conversationReducer,
+  comments: commentsReducer
  });
