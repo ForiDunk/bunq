@@ -1,6 +1,6 @@
-export default (state = {}, action) => {
+export default (state = [], action) => {
   switch (action.type) {
-    case 'SELECT_CONVERSATION':
+    case 'GET_CONVERSATIONS':
       return action.payload;
     default:
       return state;

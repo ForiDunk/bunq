@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getComments, getConversationDetails } from '../actions';
+import { getComments, selectConversation } from '../actions';
 import Comment from './Comment';
 
 class Comments extends React.Component {
   componentDidMount() {
     this.props.getComments(6, 1);
-    this.props.getConversationDetails(6);
+    this.props.selectConversation(6);
   }
 
   render() {

@@ -3,10 +3,12 @@ import userReducer from './userReducer';
 import usersReducer from './usersReducer';
 import commentsReducer from './commentsReducer';
 import conversationReducer from './conversationReducer';
+import conversationsReducer from './conversationsReducer';
 
 export default combineReducers({ 
   users: usersReducer,
   comments: commentsReducer,
   selectedUser: userReducer,
-  conversation: conversationReducer
+  conversation: conversationReducer,
+  conversations: conversationsReducer
  });
