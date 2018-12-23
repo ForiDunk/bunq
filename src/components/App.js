@@ -5,7 +5,7 @@ import _ from 'lodash' ;
 import LandingPage from './LandingPage';
 import UsersPage from './UsersPage';
 import ConversationsPage from './ConversationsPage';
-import Comments from './Comments';
+import MessagingPage from './MessagingPage';
 
 
 const App = ({ isUserSelected }) => {
@@ -15,7 +15,7 @@ const App = ({ isUserSelected }) => {
         <Route path="/" exact component={LandingPage} />
         <Route path="/users" exact component={UsersPage} />
         <Route path="/conversations" exact render={() =>  isUserSelected ? <ConversationsPage/> : <Redirect to="/"/>} />
-        <Route path="/conversations/:id" exact render={() =>  isUserSelected ? <Comments/> : <Redirect to="/"/>} />
+        <Route path="/conversations/:id" exact render={() =>  isUserSelected ? <MessagingPage/> : <Redirect to="/"/>} />
       </div>
     </BrowserRouter>
   );

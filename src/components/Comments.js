@@ -33,7 +33,6 @@ class Comments extends React.Component {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return { 
     comments: state.comments,
     users: state.users,
