@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { sendMessage, getComments } from '../actions';
 
 class InputField extends React.Component {
   state = {
@@ -7,6 +9,14 @@ class InputField extends React.Component {
 
   onFormSubmit = (e) => {
     e.preventDefault();
+    const params = {
+      message: this.state.comment,
+      senderId: this.props.senderId
+    };
+
+    console.log(this.props.conversationId, params);
+    this.props.sendMessage(this.props.conversationId, params);
+
     this.setState({comment: ''})
   }
 
@@ -27,4 +37,12 @@ class InputField extends React.Component {
   }
 };
 
-export default InputField;
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    senderId: state.selectedUser.id,
+    conversationId: state.selectedConversation.conversation.conversationId
+  };
+};
+
+export default connect(mapStateToProps, { sendMessage, getComments })(InputField);

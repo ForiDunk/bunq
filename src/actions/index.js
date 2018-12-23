@@ -37,3 +37,11 @@ export const getConversations = (userId) => async dispatch => {
     payload: conversations.data 
   });
 }
+
+export const sendMessage = (conversationId, params) => async dispatch => {
+  const message = await bunq.post(`/conversation/${conversationId}/message/send`, params);
+  dispatch({ 
+    type: 'SEND_MESSAGE', 
+    payload: message.data 
+  });
+}
