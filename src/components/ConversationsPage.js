@@ -9,7 +9,7 @@ class ConversationsPage extends React.Component {
   }
 
   onConversationSelect = (conversation) => {
-    selectConversation(conversation);
+    this.props.selectConversation(conversation);
   }
 
   render() {
@@ -49,7 +49,8 @@ class ConversationsPage extends React.Component {
 const mapStateToProps = (state) => {
   return {
     user: state.selectedUser,
-    conversations: state.conversations
+    conversations: state.conversations,
+    selectedConversation: state.selectedConversation
   };
 }
 

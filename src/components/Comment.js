@@ -3,12 +3,11 @@ import React from 'react';
 class Comment extends React.Component {
 
   render() {
-
-    const { comment } = this.props;
+    const { comment, user } = this.props;
 
     return (
       <div className="content">
-        <div className="author">batman</div>
+        <div className="author">{user[0].name}</div>
         <div className="metadata">
           <span className="date">{new Date(comment.timestamp).toLocaleString()}</span>
         </div>

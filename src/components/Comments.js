@@ -5,17 +5,20 @@ import Comment from './Comment';
 
 class Comments extends React.Component {
   componentDidMount() {
-    this.props.getComments(4, 1);
+    this.props.getComments(this.props.conversation.conversationId, 1);
   }
 
   render() {
-    const { comments } = this.props;
+    const { comments, users } = this.props;
+    const commentList = comments.map(comment => {
+      const sender = users.filter(user => user.id === comment.senderId);
 
-    const commentList = comments.map(comment => (
-      <div key={comment.id} className="comment">
-        <Comment comment={comment} />
-      </div>
-    ));
+      return (
+        <div key={comment.id} className="comment">
+          <Comment user={sender} comment={comment} />
+        </div>
+      );
+    });
 
     if(this.props.comments.length === 0) {
       return <div>Loading...</div>;
@@ -30,7 +33,12 @@ class Comments extends React.Component {
 };
 
 const mapStateToProps = (state) => {
-  return { comments: state.comments };
+  console.log(state);
+  return { 
+    comments: state.comments,
+    users: state.users,
+    conversation: state.selectedConversation.conversation
+  };
 }
 
 export default connect(mapStateToProps, { getComments })(Comments);
