@@ -4,8 +4,18 @@ import { getComments } from '../actions';
 import Comment from './Comment';
 
 class Comments extends React.Component {
+  intervalID = 0;
+
+  // in absence of a websocket, this is a working solution I could come up with
+  //  if there's a better solution without a websocket, let me know :)
   componentDidMount() {
     this.props.getComments(this.props.conversation.conversationId, 1);
+    this.intervalID = setInterval(() => this.props.getComments(this.props.conversation.conversationId, 1), 2000);
+  }
+
+  // this is to stop the requests when user leaves this page
+  componentWillUnmount() {
+    clearInterval(this.intervalID);
   }
 
   render() {

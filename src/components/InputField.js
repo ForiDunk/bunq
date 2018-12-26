@@ -14,10 +14,9 @@ class InputField extends React.Component {
       senderId: this.props.senderId
     };
 
-    console.log(this.props.conversationId, params);
     this.props.sendMessage(this.props.conversationId, params);
 
-    this.setState({comment: ''})
+    this.setState({comment: ''});
   }
 
   render() {
@@ -31,14 +30,13 @@ class InputField extends React.Component {
           value={this.state.comment}
           autoFocus
         />
-        <button>Send</button>
+        <button disabled={!this.state.comment}>Send</button>
       </form>
     );
   }
 };
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     senderId: state.selectedUser.id,
     conversationId: state.selectedConversation.conversation.conversationId
