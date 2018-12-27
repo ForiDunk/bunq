@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { sendMessage, getComments } from '../actions';
+import Button from '@material-ui/core/Button';
 
 class InputField extends React.Component {
   state = {
@@ -30,7 +31,7 @@ class InputField extends React.Component {
           value={this.state.comment}
           autoFocus
         />
-        <button disabled={!this.state.comment}>Send</button>
+        <Button color="secondary" disabled={!this.state.comment}>Send</Button>
       </form>
     );
   }
