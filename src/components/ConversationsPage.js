@@ -15,15 +15,15 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 const styles = theme => {
   return ({
     paper: {
-      width          : '100%',
-      maxWidth       : 700,
-      margin         : '0 auto',
-      textAlign      : 'center',
+      width: '100%',
+      maxWidth: 700,
+      margin: '0 auto',
+      textAlign: 'center',
     },
     headingText: {
       backgroundColor: theme.palette.primary.dark,
-      padding        : '5px 0', 
-      color          : theme.palette.getContrastText(theme.palette.primary.dark),
+      padding: '5px 0', 
+      color: theme.palette.getContrastText(theme.palette.primary.dark),
     },
     link: {
       textDecoration: 'none'

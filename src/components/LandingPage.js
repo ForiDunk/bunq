@@ -13,17 +13,17 @@ import Fab from '@material-ui/core/Fab';
 const styles = theme => {
   return ({
     paper: {
-      paddingBottom  : theme.spacing.unit * 2,
-      width          : '100%',
-      maxWidth       : 700,
-      margin         : '0 auto',
-      textAlign      : 'center',
+      paddingBottom: theme.spacing.unit * 2,
+      width: '100%',
+      maxWidth: 700,
+      margin: '0 auto',
+      textAlign: 'center',
     },
     headingText: {
       backgroundColor: theme.palette.primary.dark,
-      padding        : '20px 0',
-      color          : theme.palette.getContrastText(theme.palette.secondary.dark),
-      marginBottom   : theme.spacing.unit,
+      padding: '20px 0',
+      color: theme.palette.getContrastText(theme.palette.secondary.dark),
+      marginBottom: theme.spacing.unit,
     }
   })
 };
@@ -34,27 +34,27 @@ const LandingPage = (props) => {
   const toolsUsed = [
     {
       name: "React",
-      url : "https://reactjs.org/"
+      url: "https://reactjs.org/"
     },
     {
       name: "Redux and React-Redux",
-      url : "https://react-redux.js.org/"
+      url: "https://react-redux.js.org/"
     },
     {
       name: "React-Router",
-      url : "https://reacttraining.com/react-router/"
+      url: "https://reacttraining.com/react-router/"
     },
     {
       name: "Axios",
-      url : "https://github.com/axios/axios"
+      url: "https://github.com/axios/axios"
     },
     {
       name: "Lodash (on one specific situation)",
-      url : "https://lodash.com/"
+      url: "https://lodash.com/"
     },
     {
       name: "Material-UI",
-      url : "https://material-ui.com/"
+      url: "https://material-ui.com/"
     }
   ];
 
