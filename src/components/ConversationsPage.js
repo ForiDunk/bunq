@@ -49,7 +49,7 @@ class ConversationsPage extends React.Component {
       const path = `/conversations/${conversation.conversation.conversationId}`;
 
       return (
-        <Link to={path} onClick={() => this.onConversationSelect(conversation)} key={index}>
+        <Link className={classes.link} to={path} onClick={() => this.onConversationSelect(conversation)} key={index}>
           <ListItem button divider>
             <ListItemIcon><GroupTwoTone color="primary" fontSize="large"/></ListItemIcon>
             <ListItemText>{conversation.conversation.name ? conversation.conversation.name : 'undefined'}</ListItemText>
