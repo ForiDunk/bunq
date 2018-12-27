@@ -22,13 +22,10 @@ const styles = theme => {
     },
     heading: {
       backgroundColor: theme.palette.primary.dark,
-      padding        : '10px 0',
+      padding        : '20px 0',
     },
     headingText: {
       color          : theme.palette.getContrastText(theme.palette.primary.dark),
-    },
-    list: {
-      ...theme.mixins.gutters(),
     }
   })
 };
@@ -76,14 +73,14 @@ const LandingPage = (props) => {
       <Typography className={classes.headingText} variant="h5">
         Wellcome to my little Chat App!
       </Typography>
-      <Typography className={classes.headingText} variant="subtitle1">
+    </section>
+      <List disablePadding>
+      <Typography variant="subheading">
         This app was built by me (Szabolcs Forreiter) using the following technologies:
       </Typography>
-    </section>
-      <List className={classes.list}>
         {toolsUsedList}
       </List>
-      <Button variant="contained" color="primary" component={Link} to="/users">Start Testing the app</Button>
+      <Button variant="extendedFab" color="secondary" component={Link} to="/users">Start Testing the app</Button>
     </Paper>
   );
 };
