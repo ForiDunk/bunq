@@ -18,12 +18,12 @@ const styles = theme => {
       maxWidth       : 700,
       margin         : '0 auto',
       textAlign      : 'center',
-      backgroundColor: theme.palette.primary.light
     },
     headingText: {
       backgroundColor: theme.palette.primary.dark,
       padding        : '20px 0',
       color          : theme.palette.getContrastText(theme.palette.secondary.dark),
+      marginBottom   : theme.spacing.unit,
     }
   })
 };

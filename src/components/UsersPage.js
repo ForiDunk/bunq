@@ -14,12 +14,10 @@ import AccountCircleTwoTone from '@material-ui/icons/AccountCircleTwoTone';
 const styles = theme => {
   return ({
     paper: {
-      paddingBottom  : theme.spacing.unit * 2,
       width          : '100%',
       maxWidth       : 700,
       margin         : '0 auto',
       textAlign      : 'center',
-      backgroundColor: theme.palette.primary.light
     },
     headingText: {
       backgroundColor: theme.palette.primary.dark,
@@ -46,7 +44,7 @@ class UsersPage extends React.Component {
 
     const allUsers = this.props.users.map(user => (
       <Link className={classes.link} to="/conversations" onClick={() => this.onUserSelect(user)} key={user.id}>
-        <ListItem button>
+        <ListItem button divider>
           <ListItemIcon><AccountCircleTwoTone color="primary" fontSize="large"/></ListItemIcon>
           <ListItemText>{user.name}</ListItemText>
         </ListItem>
@@ -56,7 +54,7 @@ class UsersPage extends React.Component {
     return (
       <Paper className={classes.paper} elevation={1}>
         <Typography className={classes.headingText} variant="h5">Select a test account:</Typography>
-        <List>
+        <List disablePadding>
           {allUsers}
         </List>
       </Paper>
