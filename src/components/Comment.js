@@ -6,12 +6,10 @@ class Comment extends React.Component {
     const { comment, user } = this.props;
 
     return (
-      <div className="content">
-        <div className="author">{user[0].name}</div>
-        <div className="metadata">
-          <span className="date">{new Date(comment.timestamp).toLocaleString()}</span>
-        </div>
-        <div className="text">{comment.message}</div>
+      <div>
+        <div>{user[0].name}</div>
+        <span>{new Date(comment.timestamp).toLocaleString()}</span>
+        <div>{comment.message}</div>
       </div>
     );
   }

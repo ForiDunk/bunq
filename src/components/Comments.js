@@ -24,18 +24,18 @@ class Comments extends React.Component {
       const sender = users.filter(user => user.id === comment.senderId);
 
       return (
-        <div key={comment.id} className="comment">
+        <div key={comment.id}>
           <Comment user={sender} comment={comment} />
         </div>
       );
     });
 
     if(this.props.comments.length === 0) {
-      return <div>Loading...</div>;
+      return <div>Be the first to comment!</div>;
     }
 
     return (
-      <div className="ui comments">
+      <div>
         {commentList}
       </div>
     );

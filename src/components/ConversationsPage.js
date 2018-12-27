@@ -17,30 +17,16 @@ class ConversationsPage extends React.Component {
       const path = `/conversations/${conversation.conversation.conversationId}`;
 
       return (
-        <Link 
-          to={path}
-          onClick={() => this.onConversationSelect(conversation)} 
-          key={index} 
-          className="item"
-        >
-          <i className="users icon"></i>
-          <div className="content">
-            <div className="header">{conversation.conversation.name ? conversation.conversation.name : 'undefined'}</div>
-          </div>
+        <Link to={path} onClick={() => this.onConversationSelect(conversation)} key={index}>
+          <div>{conversation.conversation.name ? conversation.conversation.name : 'undefined'}</div>
         </Link>
       );
     });
 
     return (
-      <div className="ui segment">
-        <h3 className="ui top attached header">
-          Select a Conversation:
-        </h3>
-        <div className="ui attached segment">
-          <div className="ui middle aligned selection list">
-            {allConversations}
-          </div>
-        </div>
+      <div>
+        <h3>Select a Conversation:</h3>
+        {allConversations}
       </div>
     );
   }

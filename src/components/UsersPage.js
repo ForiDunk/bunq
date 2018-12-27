@@ -15,29 +15,15 @@ class UsersPage extends React.Component {
   render() {
 
     const allUsers = this.props.users.map(user => (
-        <Link 
-          to="/conversations" 
-          onClick={() => this.onUserSelect(user)} 
-          key={user.id} 
-          className="item"
-        >
-          <i className="user icon"></i>
-          <div className="content">
-            <div className="header">{user.name}</div>
-          </div>
+        <Link to="/conversations" onClick={() => this.onUserSelect(user)} key={user.id}>
+          <div>{user.name}</div>
         </Link>
     ));
 
     return (
-      <div className="ui segment">
-        <h3 className="ui top attached header">
-          Select a test account:
-        </h3>
-        <div className="ui attached segment">
-          <div className="ui middle aligned selection list">
-            {allUsers}
-          </div>
-        </div>
+      <div>
+        <h3>Select a test account:</h3>
+        {allUsers}
       </div>
     );
   }
