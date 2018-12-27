@@ -12,27 +12,26 @@ import ListItemText from '@material-ui/core/ListItemText';
 import GroupTwoTone from '@material-ui/icons/GroupTwoTone';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-const styles = theme => {
-  return ({
-    paper: {
-      width: '100%',
-      maxWidth: 700,
-      margin: '0 auto',
-      textAlign: 'center',
-    },
-    headingText: {
-      backgroundColor: theme.palette.primary.dark,
-      padding: '5px 0', 
-      color: theme.palette.getContrastText(theme.palette.primary.dark),
-    },
-    link: {
-      textDecoration: 'none'
-    },
-    progress: {
-      margin: theme.spacing.unit * 2,
-    },
-  })
-};
+const styles = theme => ({
+  paper: {
+    width: '100%',
+    maxWidth: 700,
+    margin: '0 auto',
+    textAlign: 'center',
+    marginBottom: theme.spacing.unit,
+  },
+  headingText: {
+    backgroundColor: theme.palette.primary.dark,
+    padding: '5px 0', 
+    color: theme.palette.getContrastText(theme.palette.primary.dark),
+  },
+  link: {
+    textDecoration: 'none'
+  },
+  progress: {
+    margin: theme.spacing.unit * 2,
+  },
+});
 
 class ConversationsPage extends React.Component {
   componentDidMount() {

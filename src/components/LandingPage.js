@@ -10,23 +10,21 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ExploreTwoTone from '@material-ui/icons/ExploreTwoTone';
 import Fab from '@material-ui/core/Fab';
 
-const styles = theme => {
-  return ({
-    paper: {
-      paddingBottom: theme.spacing.unit * 2,
-      width: '100%',
-      maxWidth: 700,
-      margin: '0 auto',
-      textAlign: 'center',
-    },
-    headingText: {
-      backgroundColor: theme.palette.primary.dark,
-      padding: '20px 0',
-      color: theme.palette.getContrastText(theme.palette.secondary.dark),
-      marginBottom: theme.spacing.unit,
-    }
-  })
-};
+const styles = theme => ({
+  paper: {
+    paddingBottom: theme.spacing.unit * 2,
+    width: '100%',
+    maxWidth: 700,
+    margin: '0 auto',
+    textAlign: 'center',
+  },
+  headingText: {
+    backgroundColor: theme.palette.primary.dark,
+    padding: '20px 0',
+    color: theme.palette.getContrastText(theme.palette.secondary.dark),
+    marginBottom: theme.spacing.unit,
+  }
+});
 
 const LandingPage = (props) => {
   const { classes } = props;

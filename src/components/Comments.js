@@ -2,6 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getComments } from '../actions';
 import Comment from './Comment';
+import { withStyles } from '@material-ui/core/styles';
+import List from '@material-ui/core/List';
+
+const styles = theme => ({
+  list: {
+    height: '70vh',
+    overflow: 'scroll',
+    backgroundColor: theme.palette.primary.main
+  }
+});
 
 class Comments extends React.Component {
   intervalID = 0;
@@ -19,15 +29,11 @@ class Comments extends React.Component {
   }
 
   render() {
-    const { comments, users } = this.props;
+    const { comments, users, classes, selectedUser } = this.props;
     const commentList = comments.map(comment => {
       const sender = users.filter(user => user.id === comment.senderId);
 
-      return (
-        <div key={comment.id}>
-          <Comment user={sender} comment={comment} />
-        </div>
-      );
+      return <Comment key={comment.id} user={sender} comment={comment} selectedUser={selectedUser} />;
     });
 
     if(this.props.comments.length === 0) {
@@ -35,19 +41,20 @@ class Comments extends React.Component {
     }
 
     return (
-      <div>
+      <List className={classes.list} disablePadding>
         {commentList}
-      </div>
+      </List>
     );
   }
 };
 
 const mapStateToProps = (state) => {
   return { 
+    selectedUser: state.selectedUser,
     comments: state.comments,
     users: state.users,
     conversation: state.selectedConversation.conversation
   };
 }
 
-export default connect(mapStateToProps, { getComments })(Comments);
+export default connect(mapStateToProps, { getComments })(withStyles(styles)(Comments));
