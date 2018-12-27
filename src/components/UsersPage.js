@@ -10,6 +10,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import AccountCircleTwoTone from '@material-ui/icons/AccountCircleTwoTone';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const styles = theme => {
   return ({
@@ -26,7 +27,10 @@ const styles = theme => {
     },
     link: {
       textDecoration: 'none'
-    }
+    },
+    progress: {
+      margin: theme.spacing.unit * 2,
+    },
   })
 };
 
@@ -55,7 +59,7 @@ class UsersPage extends React.Component {
       <Paper className={classes.paper} elevation={1}>
         <Typography className={classes.headingText} variant="h5">Select a test account:</Typography>
         <List disablePadding>
-          {allUsers}
+          {this.props.users.length === 0 ? <CircularProgress className={classes.progress}/> : allUsers}
         </List>
       </Paper>
     );
