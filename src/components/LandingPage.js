@@ -18,7 +18,7 @@ const styles = theme => {
       maxWidth       : 700,
       margin         : '0 auto',
       textAlign      : 'center',
-      backgroundColor: theme.palette.primary.light
+      // backgroundColor: theme.palette.primary.light
     },
     heading: {
       backgroundColor: theme.palette.primary.dark,
