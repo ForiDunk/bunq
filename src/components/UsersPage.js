@@ -19,7 +19,7 @@ const styles = theme => {
       maxWidth       : 700,
       margin         : '0 auto',
       textAlign      : 'center',
-      // backgroundColor: theme.palette.primary.light
+      backgroundColor: theme.palette.primary.light
     },
     headingText: {
       backgroundColor: theme.palette.primary.dark,
@@ -47,7 +47,7 @@ class UsersPage extends React.Component {
     const allUsers = this.props.users.map(user => (
       <Link className={classes.link} to="/conversations" onClick={() => this.onUserSelect(user)} key={user.id}>
         <ListItem button>
-          <ListItemIcon><AccountCircleTwoTone color="secondary" fontSize="large"/></ListItemIcon>
+          <ListItemIcon><AccountCircleTwoTone color="primary" fontSize="large"/></ListItemIcon>
           <ListItemText>{user.name}</ListItemText>
         </ListItem>
       </Link>

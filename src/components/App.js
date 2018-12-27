@@ -13,20 +13,6 @@ const theme = createMuiTheme({
   typography: {
     useNextVariants: true,
   },
-  palette: {
-    primary: {
-      light: '#428e92',
-      main: '#006064',
-      dark: '#00363a',
-      contrastText: '#fff',
-    },
-    secondary: {
-      light: '#f9683a',
-      main: '#bf360c',
-      dark: '#870000',
-      contrastText: '#fff',
-    },
-  },
 });
 
 const App = ({ isUserSelected }) => {

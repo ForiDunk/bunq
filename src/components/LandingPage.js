@@ -18,12 +18,12 @@ const styles = theme => {
       maxWidth       : 700,
       margin         : '0 auto',
       textAlign      : 'center',
-      // backgroundColor: theme.palette.primary.light
+      backgroundColor: theme.palette.primary.light
     },
     headingText: {
       backgroundColor: theme.palette.primary.dark,
       padding        : '20px 0',
-      color          : theme.palette.getContrastText(theme.palette.primary.dark),
+      color          : theme.palette.getContrastText(theme.palette.secondary.dark),
     }
   })
 };
@@ -60,7 +60,7 @@ const LandingPage = (props) => {
 
   const toolsUsedList = toolsUsed.map((tool, index) => (
     <ListItem key={index}>
-      <ListItemIcon><a target="_blank" rel="noopener noreferrer" href={tool.url}><ExploreTwoTone color="secondary"/></a></ListItemIcon>
+      <ListItemIcon><a target="_blank" rel="noopener noreferrer" href={tool.url}><ExploreTwoTone color="primary"/></a></ListItemIcon>
       <ListItemText>{tool.name}</ListItemText>
     </ListItem>
   ));
