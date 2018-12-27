@@ -7,8 +7,8 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import Explore from '@material-ui/icons/Explore';
-import Button from '@material-ui/core/Button';
+import ExploreTwoTone from '@material-ui/icons/ExploreTwoTone';
+import Fab from '@material-ui/core/Fab';
 
 const styles = theme => {
   return ({
@@ -20,11 +20,9 @@ const styles = theme => {
       textAlign      : 'center',
       // backgroundColor: theme.palette.primary.light
     },
-    heading: {
+    headingText: {
       backgroundColor: theme.palette.primary.dark,
       padding        : '20px 0',
-    },
-    headingText: {
       color          : theme.palette.getContrastText(theme.palette.primary.dark),
     }
   })
@@ -62,25 +60,23 @@ const LandingPage = (props) => {
 
   const toolsUsedList = toolsUsed.map((tool, index) => (
     <ListItem key={index}>
-      <ListItemIcon><a target="_blank" rel="noopener noreferrer" href={tool.url}><Explore color="primary"/></a></ListItemIcon>
+      <ListItemIcon><a target="_blank" rel="noopener noreferrer" href={tool.url}><ExploreTwoTone color="secondary"/></a></ListItemIcon>
       <ListItemText>{tool.name}</ListItemText>
     </ListItem>
   ));
 
   return (
     <Paper className={classes.paper} elevation={1}>
-    <section className={classes.heading}>
       <Typography className={classes.headingText} variant="h5">
         Wellcome to my little Chat App!
       </Typography>
-    </section>
       <List disablePadding>
-      <Typography variant="subheading">
+      <Typography variant="subtitle1">
         This app was built by me (Szabolcs Forreiter) using the following technologies:
       </Typography>
         {toolsUsedList}
       </List>
-      <Button variant="extendedFab" color="secondary" component={Link} to="/users">Start Testing the app</Button>
+      <Fab variant="extended" color="primary" component={Link} to="/users">Start Testing the app</Fab>
     </Paper>
   );
 };
