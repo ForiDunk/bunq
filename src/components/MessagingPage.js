@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import * as ReactDOM from 'react-dom';
 import Comments from './Comments';
 import InputField from './InputField.js';
 import { withStyles } from '@material-ui/core/styles';
@@ -26,18 +27,22 @@ const styles = theme => ({
   }
 });
 
-const MessagingPage = (props) => {
-  const { classes } = props;
-  return (
-    <Paper className={classes.paper} elevation={1}>
-      <section className={classes.comments}>
-        <Comments />
-      </section>
-      <section className={classes.inputField}>
-        <InputField />
-      </section>
-    </Paper>
-  );
+class MessagingPage extends Component {
+
+  render() {
+    const { classes } = this.props;
+
+    return (
+      <Paper className={classes.paper} elevation={1}>
+        <section className={classes.comments}>
+          <Comments />
+        </section>
+        <section className={classes.inputField}>
+          <InputField />
+        </section>
+      </Paper>
+    );
+  }
 }
 
 export default withStyles(styles)(MessagingPage);
