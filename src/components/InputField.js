@@ -47,7 +47,6 @@ class InputField extends React.Component {
         <TextField
           id="comment"
           label="Comment"
-          multiline
           className={classes.textField}
           margin="normal"
           value={this.state.comment}
