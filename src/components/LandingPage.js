@@ -74,7 +74,7 @@ const LandingPage = (props) => {
       </Typography>
         {toolsUsedList}
       </List>
-      <Fab variant="extended" color="primary" component={Link} to="/users">Start Testing the app</Fab>
+      <Fab variant="extended" color="secondary" component={Link} to="/users">Start Testing the app</Fab>
     </Paper>
   );
 };

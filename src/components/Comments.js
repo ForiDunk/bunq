@@ -2,16 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getComments } from '../actions';
 import Comment from './Comment';
-import { withStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
-
-const styles = theme => ({
-  list: {
-    height: '70vh',
-    overflow: 'scroll',
-    backgroundColor: theme.palette.primary.light
-  }
-});
 
 class Comments extends React.Component {
   intervalID = 0;
@@ -29,7 +20,7 @@ class Comments extends React.Component {
   }
 
   render() {
-    const { comments, users, classes, selectedUser } = this.props;
+    const { comments, users, selectedUser } = this.props;
     const commentList = comments.map(comment => {
       const sender = users.filter(user => user.id === comment.senderId);
 
@@ -41,7 +32,7 @@ class Comments extends React.Component {
     }
 
     return (
-      <List className={classes.list} disablePadding>
+      <List disablePadding>
         {commentList}
       </List>
     );
@@ -57,4 +48,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps, { getComments })(withStyles(styles)(Comments));
+export default connect(mapStateToProps, { getComments })(Comments);
