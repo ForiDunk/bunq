@@ -1,6 +1,6 @@
 {
   "homepage": "http://ForiDunk.github.io/bunq",
-  "name": "ChatApp",
+  "name": "chat-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
