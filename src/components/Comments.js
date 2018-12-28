@@ -9,7 +9,7 @@ const styles = theme => ({
   list: {
     height: '70vh',
     overflow: 'scroll',
-    backgroundColor: theme.palette.primary.main
+    backgroundColor: theme.palette.primary.light
   }
 });
 

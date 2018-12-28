@@ -29,7 +29,6 @@ class InputField extends React.Component {
           id="comment" 
           onChange={event => this.setState({comment: event.target.value})} 
           value={this.state.comment}
-          autoFocus
         />
         <Button color="secondary" disabled={!this.state.comment}>Send</Button>
       </form>
