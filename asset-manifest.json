@@ -1,13 +1,13 @@
 {
   "main.css": "/bunq/static/css/main.5705cb83.chunk.css",
-  "main.js": "/bunq/static/js/main.09fac6c5.chunk.js",
-  "main.js.map": "/bunq/static/js/main.09fac6c5.chunk.js.map",
+  "main.js": "/bunq/static/js/main.e06e506f.chunk.js",
+  "main.js.map": "/bunq/static/js/main.e06e506f.chunk.js.map",
   "static/js/1.3e2566af.chunk.js": "/bunq/static/js/1.3e2566af.chunk.js",
   "static/js/1.3e2566af.chunk.js.map": "/bunq/static/js/1.3e2566af.chunk.js.map",
   "runtime~main.js": "/bunq/static/js/runtime~main.9a86a311.js",
   "runtime~main.js.map": "/bunq/static/js/runtime~main.9a86a311.js.map",
   "static/css/main.5705cb83.chunk.css.map": "/bunq/static/css/main.5705cb83.chunk.css.map",
   "index.html": "/bunq/index.html",
-  "precache-manifest.aaea39ad301e2db896fc804229ad53cd.js": "/bunq/precache-manifest.aaea39ad301e2db896fc804229ad53cd.js",
+  "precache-manifest.2f0480f04de111bc68872f1319ba00c6.js": "/bunq/precache-manifest.2f0480f04de111bc68872f1319ba00c6.js",
   "service-worker.js": "/bunq/service-worker.js"
 }
