@@ -10,7 +10,8 @@ const styles = theme => ({
     background: 'linear-gradient(45deg, #fff 50%, #7986cb 95%)',
     borderRadius: '30px',
     padding: '16px',
-    margin: '12px 8px'
+    margin: '12px 8px',
+    overflowWrap: 'break-word',
   },
   listItemUser: {
     width: 'auto',
@@ -18,7 +19,8 @@ const styles = theme => ({
     textAlign: 'end',
     borderRadius: '30px',
     padding: '16px',
-    margin: '12px 8px'
+    margin: '12px 8px',
+    overflowWrap: 'break-word',
   },
   inline: {
     display: 'inline',
