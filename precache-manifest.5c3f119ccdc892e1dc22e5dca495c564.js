@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/bunq/static/js/runtime~main.9a86a311.js"
   },
   {
-    "revision": "842e68af6802b9712097fe7074e29b68",
+    "revision": "72f66b94a52e32b2d72af9f71d7b001b",
     "url": "/bunq/index.html"
   }
 ];
