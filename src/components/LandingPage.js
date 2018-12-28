@@ -58,7 +58,11 @@ const LandingPage = (props) => {
 
   const toolsUsedList = toolsUsed.map((tool, index) => (
     <ListItem key={index}>
-      <ListItemIcon><a target="_blank" rel="noopener noreferrer" href={tool.url}><ExploreTwoTone color="primary"/></a></ListItemIcon>
+      <ListItemIcon>
+        <a target="_blank" rel="noopener noreferrer" href={tool.url} aria-label={tool.name}>
+          <ExploreTwoTone color="primary"/>
+        </a>
+        </ListItemIcon>
       <ListItemText>{tool.name}</ListItemText>
     </ListItem>
   ));
@@ -68,10 +72,10 @@ const LandingPage = (props) => {
       <Typography className={classes.headingText} variant="h5">
         Wellcome to my little Chat App!
       </Typography>
-      <List disablePadding>
       <Typography variant="subtitle1">
         This app was built by me (Szabolcs Forreiter) using the following technologies:
       </Typography>
+      <List disablePadding>
         {toolsUsedList}
       </List>
       <Fab variant="extended" color="primary" component={Link} to="/users">Start Testing the app</Fab>

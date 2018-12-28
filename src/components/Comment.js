@@ -6,15 +6,21 @@ import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   listItem: {
-    margin: theme.spacing.unit,
     width: 'auto',
-    backgroundColor: 'white'
+    background: 'linear-gradient(45deg, #fff 50%, #7986cb 95%)',
+    borderRadius: '30px',
+    padding: '16px',
+    margin: '12px 8px',
+    overflowWrap: 'break-word',
   },
   listItemUser: {
-    margin: theme.spacing.unit,
     width: 'auto',
-    backgroundColor: theme.palette.primary.dark,
-    textAlign: 'end'
+    background: 'linear-gradient(45deg, #7986cb 30%, #303f9f 70%)',
+    textAlign: 'end',
+    borderRadius: '30px',
+    padding: '16px',
+    margin: '12px 8px',
+    overflowWrap: 'break-word',
   },
   inline: {
     display: 'inline',
@@ -34,11 +40,24 @@ class Comment extends Component {
 
   render() {
     const { comment, user, classes, selectedUser } = this.props;
+
+    if (comment.senderId === selectedUser.id) {
+      return (
+        <ListItem dense divider className={classes.listItemUser}>
+        <ListItemText>
+          <Typography variant="body1" className={classes.messageTextUser}>
+            {comment.message}
+          </Typography>
+        </ListItemText>
+      </ListItem>
+      );
+    }
+
     return (
-      <ListItem className={comment.senderId === selectedUser.id ? classes.listItemUser : classes.listItem}>
+      <ListItem dense divider className={classes.listItem}>
         <ListItemText
           primary={
-            <Typography variant="body1" className={comment.senderId === selectedUser.id ? classes.messageTextUser : classes.messageText}>
+            <Typography variant="body1" className={classes.messageText}>
               {comment.message}
             </Typography>
           }
